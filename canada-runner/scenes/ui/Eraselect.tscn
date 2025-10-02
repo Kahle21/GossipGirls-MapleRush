@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxhb0icpiex4f"]
+
+[ext_resource type="Script" uid="uid://bh0siqexai7sc" path="res://scenes/ui/era_select.gd" id="1_0xwa0"]
+
+[node name="EraSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xwa0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1281.0
+offset_bottom = 740.0
+color = Color(0.54509807, 0.6745098, 1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 163.0
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Choose Era"
+
+[node name="PreColonialButton" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Precolonial Era"
+
+[node name="ConfederationButton" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Confederation"
+
+[node name="ModernButton" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Modern Canada"
+
+[node name="BackButton" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

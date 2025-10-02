@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl2y6ocbkiym6"]
+
+[ext_resource type="PackedScene" uid="uid://dhysynv5gy1uo" path="res://scenes/player/player.tscn" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://c60tlhgej6hiq" path="res://scripts/managers/game_logic.gd" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://dyqyiigdawnb0" path="res://scenes/ui/item.tscn" id="3_k2fmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgp6g"]
+size = Vector2(14000, 40)
+
+[node name="Main" type="Node2D"]
+
+[node name="sky" type="ColorRect" parent="."]
+z_index = -10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 9999.0
+offset_bottom = 699.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 1, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(2000, 720)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_sgp6g")
+one_way_collision_margin = 0.0
+
+[node name="Player" parent="." instance=ExtResource("1_hyk8p")]
+position = Vector2(100, 620)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+
+[node name="GameLogic" type="Node" parent="."]
+script = ExtResource("2_iuonh")
+
+[node name="item" parent="." instance=ExtResource("3_k2fmo")]
+position = Vector2(640, 591)
+
+[node name="item2" parent="." instance=ExtResource("3_k2fmo")]
+position = Vector2(1436, 600)
+
+[node name="item3" parent="." instance=ExtResource("3_k2fmo")]
+position = Vector2(1929, 590)
+
+[connection signal="collected" from="item" to="GameLogic" method="_on_item_collected"]
+[connection signal="collected" from="item2" to="GameLogic" method="_on_item_collected"]
+[connection signal="collected" from="item3" to="GameLogic" method="_on_item_collected"]
