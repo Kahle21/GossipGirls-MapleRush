@@ -26,7 +26,7 @@ Modern Canada – Explore today’s Canada with new challenges.
 
 
 
-Players automatically run forward, jump to avoid obstacles, and collect historical artifacts. The goal is to survive as long as possible while learning Canadian history.
+Players automatically run forward, jump to avoid obstacles, and collect historical artifacts. The goal is to fully complete each level and collect artifacts while learning about Canadian history.
 
 
 
