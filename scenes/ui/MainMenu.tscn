@@ -26,15 +26,15 @@ offset_bottom = 40.0
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Start"
 icon = SubResource("ViewportTexture_0rmrm")
 
-[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Credits"
 
-[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Options"
